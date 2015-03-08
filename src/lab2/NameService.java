@@ -8,8 +8,8 @@ package lab2;
  * @version 1.00
  */
 public class NameService {
-    private static final int FIRST_NAME_IDX = 0;
-    private static final int LAST_NAME_IDX = 1;
+    private int firstNameIDX = 0;
+    private int lastNameIDX = 1;
     
     /**
      * Finds and returns the last name from within a full name. Caution: 
@@ -19,6 +19,17 @@ public class NameService {
      * @return the last name
      */
     public String extractLastName(String fullName) {
+        
+        // Validate the name on use in the method
+        // Checking here as well as in the gui
+        // Checking for null or no length entries
+        if(fullName == null || fullName.length() < 1){
+            throw new IllegalArgumentException();
+        } 
+        // Making sure there's a space in the name
+        else if (!fullName.contains(" ") ){
+            throw new IllegalArgumentException();
+        } 
         
         String[] nameParts = fullName.split(" ");
         return nameParts[nameParts.length - 1];
@@ -33,7 +44,7 @@ public class NameService {
      */
     public String extractFirstName(String fullName) {
         String[] nameParts = fullName.split(" ");
-        return nameParts[FIRST_NAME_IDX];
+        return nameParts[firstNameIDX];
     }
 
     /**

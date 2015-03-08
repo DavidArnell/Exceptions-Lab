@@ -22,12 +22,16 @@ public class Challenge1 {
         Challenge1 app = new Challenge1();
         
         String fullName = JOptionPane.showInputDialog("Enter full name (use Format: first last):");
+
+        
         String lastName = app.extractLastName(fullName);
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);
     }
     
     public String extractLastName(String fullName) {
+ 
+        String[] nameParts = fullName.split(" ");
         // Validate the name entry
         // Checking for null or no length entries
         if(fullName == null || fullName.length() < 1){
@@ -36,9 +40,10 @@ public class Challenge1 {
         // Making sure there's a space in the name
         else if (!fullName.contains(" ") ){
             throw new IllegalArgumentException();
-        }
+        } 
+//        // check for numbers
+//        else if(){
         
-        String[] nameParts = fullName.split(" ");
         return nameParts[nameParts.length - 1];
     }
 

@@ -18,6 +18,18 @@ public class InputOutputGui {
     public void startConversation() {
         
         String fullName = JOptionPane.showInputDialog("Enter full name:");
+        
+        // Validate the name on entry
+        // Checking for null or no length entries
+        if(fullName == null || fullName.length() < 1){
+            throw new IllegalArgumentException();
+        } 
+        // Making sure there's a space in the name
+        else if (!fullName.contains(" ") ){
+            throw new IllegalArgumentException();
+        } 
+                
+        
         String lastName = "";
         lastName = nameService.extractLastName(fullName);
   
