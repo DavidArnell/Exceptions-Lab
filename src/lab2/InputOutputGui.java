@@ -36,7 +36,7 @@ public class InputOutputGui {
             // Attempt at extracting the last name
             lastName = nameService.extractLastName(fullName);
         } catch(NullPointerException e){
-            System.out.println("Null pointer caught");
+            System.out.println("No value passed");
             
         }
   
