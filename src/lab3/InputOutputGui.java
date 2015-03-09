@@ -11,6 +11,14 @@ import javax.swing.JOptionPane;
 public class InputOutputGui {
     private NameService nameService;
 
+//        if(fullName == null || fullName.length() < 1){
+//            throw new IllegalArgumentException();
+//        } 
+//        // Making sure there's a space in the name
+//        else if (!fullName.contains(" ") ){
+//            throw new IllegalArgumentException();
+//        } 
+    
     public InputOutputGui() {
         nameService = new NameService();
     }
