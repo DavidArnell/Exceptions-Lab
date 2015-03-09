@@ -21,17 +21,24 @@ public class InputOutputGui {
         
         // Validate the name on entry
         // Checking for null or no length entries
-        if(fullName == null || fullName.length() < 1){
-            throw new IllegalArgumentException();
-        } 
-        // Making sure there's a space in the name
-        else if (!fullName.contains(" ") ){
-            throw new IllegalArgumentException();
-        } 
+        
+//        if(fullName == null || fullName.length() < 1){
+//            throw new IllegalArgumentException();
+//        } 
+//        // Making sure there's a space in the name
+//        else if (!fullName.contains(" ") ){
+//            throw new IllegalArgumentException();
+//        } 
                 
         
         String lastName = "";
-        lastName = nameService.extractLastName(fullName);
+        try {
+            // Attempt at extracting the last name
+            lastName = nameService.extractLastName(fullName);
+        } catch(NullPointerException e){
+            System.out.println("Null pointer caught");
+            
+        }
   
         String msg = "Your last name is: " + lastName;
         JOptionPane.showMessageDialog(null, msg);

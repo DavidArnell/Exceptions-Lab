@@ -14,6 +14,8 @@ public class Challenge2 {
 
     public static void main(String[] args) {
         
+        // The startup class is only instantiating a new GUI object
+        // No error catching is needed
         new InputOutputGui().startConversation();
     }
     
